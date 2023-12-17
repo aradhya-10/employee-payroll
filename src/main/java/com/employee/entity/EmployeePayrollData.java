@@ -9,4 +9,8 @@ public class EmployeePayrollData{
         this.name = name;
         this.salary = salary;
     }
+
+    public String toString(){
+        return "ID: "+ this.id + ", Name: " + this.name + ", Salary: " + this.salary;
+    }
 }
