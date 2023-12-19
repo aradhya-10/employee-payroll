@@ -26,15 +26,43 @@ public class EmployeePayrollService {
     }
 
     private void writeEmployeePayrollData() {
-        System.out.println("\nWriting Employee Payroll Console\n" + employeePayrollList.toString());
+        System.out.println("\nWriting Employee Payroll Console\n");
+        employeePayrollList.forEach(employeePayrollData -> {
+            System.out.println(employeePayrollData.toString());
+        });
     }
 
     public static void main(String[] args) {
         ArrayList<EmployeePayrollData> employeePayrollList = new ArrayList<>();
         EmployeePayrollService employeePayrollService = new EmployeePayrollService(employeePayrollList);
         Scanner consoleInputReader = new Scanner(System.in);
-        employeePayrollService.readEmployeePayrollData(consoleInputReader);
-        employeePayrollService.writeEmployeePayrollData();
+
+        int choice = 0;
+
+        while(choice!=3){
+            System.out.println("1. Add Employee Data");
+            System.out.println("2. View Employee Data");
+            System.out.println("3. Exit");
+            System.out.println("Enter choice: ");
+            choice = consoleInputReader.nextInt();
+
+            switch (choice){
+                case 1:
+                    employeePayrollService.readEmployeePayrollData(consoleInputReader);
+                    break;
+                case 2:
+                    employeePayrollService.writeEmployeePayrollData();
+                    break;
+                case 3:
+                    System.out.println("Exiting!");
+                    break;
+                default:
+                    System.out.println("Enter valid input");
+            }
+        }
+//        UC4: Write into file
+        PayrollFileI0Service payrollFileI0Service = new PayrollFileI0Service();
+        payrollFileI0Service.writeData(employeePayrollList);
     }
 }
 
