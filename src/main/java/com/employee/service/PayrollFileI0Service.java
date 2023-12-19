@@ -24,4 +24,24 @@ public class PayrollFileI0Service {
             System.out.println("Exception!");
         }
     }
+
+    public void printData() {
+        try {
+            Files.lines(new File("payroll-file.txt").toPath())
+                    .forEach(System.out::println);
+        } catch (IOException e) {
+            System.out.println("Exception!");
+        }
+    }
+
+    public long countEntries() {
+        long entries = 0;
+        try {
+            entries = Files.lines(new File("payroll-file.txt").toPath()).count();
+        } catch (IOException e) {
+            System.out.println("Exception!");
+        }
+        return entries;
+    }
+
 }

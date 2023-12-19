@@ -63,6 +63,8 @@ public class EmployeePayrollService {
 //        UC4: Write into file
         PayrollFileI0Service payrollFileI0Service = new PayrollFileI0Service();
         payrollFileI0Service.writeData(employeePayrollList);
+        System.out.println("Number of Entries: "+payrollFileI0Service.countEntries());
+        payrollFileI0Service.printData();
     }
 }
 

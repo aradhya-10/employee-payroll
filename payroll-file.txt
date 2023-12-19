@@ -1,3 +1,2 @@
-ID: 51, Name: Brijesh, Salary: 50000.0
-ID: 318, Name: Jatin, Salary: 50000.0
-ID: 69, Name: Mangal, Salary: 69000.0
+ID: 34, Name: aradhya, Salary: 40000.0
+ID: 41, Name: afnjdnf, Salary: 23450.0
